@@ -22,6 +22,14 @@ require('dap').configurations.python = {
     {
         type = 'python',
         request = 'launch',
+        name = 'pytest run current file on many cores',
+        module = 'pytest',
+        args = {'-n', 'auto', '${file}', '--log-cli-level=DEBUG'},
+        justMyCode = false,
+    },
+    {
+        type = 'python',
+        request = 'launch',
         name = 'pytest run all unit tests',
         module = 'pytest',
         args = {'tests/test_unit/', '--log-cli-level=DEBUG'},
